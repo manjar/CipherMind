@@ -7,22 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B48D8729256993CE0080468E /* GuessRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D8728256993CE0080468E /* GuessRow.swift */; };
+		B48D872C256993EB0080468E /* PegPallette.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D872B256993EB0080468E /* PegPallette.swift */; };
+		B48D87382569B7560080468E /* CipherMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D87372569B7560080468E /* CipherMindTests.swift */; };
+		B48D8744256B04030080468E /* DropTargetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D8743256B04030080468E /* DropTargetRow.swift */; };
 		B4BC9499256992DD00C2B565 /* CipherMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC9498256992DD00C2B565 /* CipherMindApp.swift */; };
-		B4BC949B256992DD00C2B565 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC949A256992DD00C2B565 /* ContentView.swift */; };
+		B4BC949B256992DD00C2B565 /* CipherMindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC949A256992DD00C2B565 /* CipherMindView.swift */; };
 		B4BC949D256992DF00C2B565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BC949C256992DF00C2B565 /* Assets.xcassets */; };
 		B4BC94A0256992DF00C2B565 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4BC949F256992DF00C2B565 /* Preview Assets.xcassets */; };
+		B4BC94A9256992FF00C2B565 /* CipherMindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC94A8256992FF00C2B565 /* CipherMindModel.swift */; };
+		B4BC94AC2569931100C2B565 /* CipherMindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BC94AB2569931100C2B565 /* CipherMindViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B48D873A2569B7560080468E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B4BC948D256992DD00C2B565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4BC9494256992DD00C2B565;
+			remoteInfo = CipherMind;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B48D8728256993CE0080468E /* GuessRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessRow.swift; sourceTree = "<group>"; };
+		B48D872B256993EB0080468E /* PegPallette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PegPallette.swift; sourceTree = "<group>"; };
+		B48D87352569B7560080468E /* CipherMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CipherMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B48D87372569B7560080468E /* CipherMindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherMindTests.swift; sourceTree = "<group>"; };
+		B48D87392569B7560080468E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B48D8743256B04030080468E /* DropTargetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropTargetRow.swift; sourceTree = "<group>"; };
 		B4BC9495256992DD00C2B565 /* CipherMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CipherMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BC9498256992DD00C2B565 /* CipherMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherMindApp.swift; sourceTree = "<group>"; };
-		B4BC949A256992DD00C2B565 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B4BC949A256992DD00C2B565 /* CipherMindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherMindView.swift; sourceTree = "<group>"; };
 		B4BC949C256992DF00C2B565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4BC949F256992DF00C2B565 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B4BC94A1256992DF00C2B565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4BC94A8256992FF00C2B565 /* CipherMindModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherMindModel.swift; sourceTree = "<group>"; };
+		B4BC94AB2569931100C2B565 /* CipherMindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CipherMindViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B48D87322569B7560080468E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4BC9492256992DD00C2B565 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,10 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B48D87362569B7560080468E /* CipherMindTests */ = {
+			isa = PBXGroup;
+			children = (
+				B48D87372569B7560080468E /* CipherMindTests.swift */,
+				B48D87392569B7560080468E /* Info.plist */,
+			);
+			path = CipherMindTests;
+			sourceTree = "<group>";
+		};
 		B4BC948C256992DD00C2B565 = {
 			isa = PBXGroup;
 			children = (
 				B4BC9497256992DD00C2B565 /* CipherMind */,
+				B48D87362569B7560080468E /* CipherMindTests */,
 				B4BC9496256992DD00C2B565 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				B4BC9495256992DD00C2B565 /* CipherMind.app */,
+				B48D87352569B7560080468E /* CipherMindTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,7 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				B4BC9498256992DD00C2B565 /* CipherMindApp.swift */,
-				B4BC949A256992DD00C2B565 /* ContentView.swift */,
+				B4BC949A256992DD00C2B565 /* CipherMindView.swift */,
+				B48D8728256993CE0080468E /* GuessRow.swift */,
+				B48D8743256B04030080468E /* DropTargetRow.swift */,
+				B48D872B256993EB0080468E /* PegPallette.swift */,
+				B4BC94AB2569931100C2B565 /* CipherMindViewModel.swift */,
+				B4BC94A8256992FF00C2B565 /* CipherMindModel.swift */,
 				B4BC949C256992DF00C2B565 /* Assets.xcassets */,
 				B4BC94A1256992DF00C2B565 /* Info.plist */,
 				B4BC949E256992DF00C2B565 /* Preview Content */,
@@ -72,6 +119,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B48D87342569B7560080468E /* CipherMindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B48D873C2569B7560080468E /* Build configuration list for PBXNativeTarget "CipherMindTests" */;
+			buildPhases = (
+				B48D87312569B7560080468E /* Sources */,
+				B48D87322569B7560080468E /* Frameworks */,
+				B48D87332569B7560080468E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B48D873B2569B7560080468E /* PBXTargetDependency */,
+			);
+			name = CipherMindTests;
+			productName = CipherMindTests;
+			productReference = B48D87352569B7560080468E /* CipherMindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B4BC9494256992DD00C2B565 /* CipherMind */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4BC94A4256992DF00C2B565 /* Build configuration list for PBXNativeTarget "CipherMind" */;
@@ -95,9 +160,13 @@
 		B4BC948D256992DD00C2B565 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					B48D87342569B7560080468E = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = B4BC9494256992DD00C2B565;
+					};
 					B4BC9494256992DD00C2B565 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -117,11 +186,19 @@
 			projectRoot = "";
 			targets = (
 				B4BC9494256992DD00C2B565 /* CipherMind */,
+				B48D87342569B7560080468E /* CipherMindTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B48D87332569B7560080468E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4BC9493256992DD00C2B565 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,18 +211,79 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B48D87312569B7560080468E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B48D87382569B7560080468E /* CipherMindTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B4BC9491256992DD00C2B565 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4BC949B256992DD00C2B565 /* ContentView.swift in Sources */,
+				B4BC949B256992DD00C2B565 /* CipherMindView.swift in Sources */,
 				B4BC9499256992DD00C2B565 /* CipherMindApp.swift in Sources */,
+				B48D8729256993CE0080468E /* GuessRow.swift in Sources */,
+				B48D8744256B04030080468E /* DropTargetRow.swift in Sources */,
+				B4BC94A9256992FF00C2B565 /* CipherMindModel.swift in Sources */,
+				B4BC94AC2569931100C2B565 /* CipherMindViewModel.swift in Sources */,
+				B48D872C256993EB0080468E /* PegPallette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B48D873B2569B7560080468E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4BC9494256992DD00C2B565 /* CipherMind */;
+			targetProxy = B48D873A2569B7560080468E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B48D873D2569B7560080468E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY9EC2LMW5;
+				INFOPLIST_FILE = CipherMindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.manjarrez.apps.CipherMindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CipherMind.app/CipherMind";
+			};
+			name = Debug;
+		};
+		B48D873E2569B7560080468E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AY9EC2LMW5;
+				INFOPLIST_FILE = CipherMindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.manjarrez.apps.CipherMindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CipherMind.app/CipherMind";
+			};
+			name = Release;
+		};
 		B4BC94A2256992DF00C2B565 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -309,6 +447,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B48D873C2569B7560080468E /* Build configuration list for PBXNativeTarget "CipherMindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B48D873D2569B7560080468E /* Debug */,
+				B48D873E2569B7560080468E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B4BC9490256992DD00C2B565 /* Build configuration list for PBXProject "CipherMind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
