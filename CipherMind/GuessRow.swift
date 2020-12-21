@@ -27,7 +27,10 @@ struct GuessRow : View {
                     .font(.system(size: 28.0))
                     .onDrag { NSItemProvider(object: string as NSString) }
                 if (score != nil) {
-                    Circle().stroke(lineWidth: 3.0).foregroundColor(colorForScore(score!))
+                    Circle()
+                        .stroke(lineWidth: 3.0)
+                        .padding(-5.0)
+                        .foregroundColor(colorForScore(score!))
                 }
             }
         }
