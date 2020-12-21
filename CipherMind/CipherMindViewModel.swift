@@ -9,9 +9,9 @@ import Foundation
 
 class CipherMindViewModel : ObservableObject {
     static private(set) var emojiSet: Array<String> = ["♥️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "🤎"]
-    @Published private var model: CipherMindModel<String> = createCipherModel()
+    @Published private var model: CipherMindModel<String> = createCipherModel(combinationWidth: combinationWidth)
     
-    static func createCipherModel() -> CipherMindModel<String> {
+    static func createCipherModel(combinationWidth: Int) -> CipherMindModel<String> {
         CipherMindModel(combinationWidth: combinationWidth, maximumAttempts: maxAttempts) { combinationWidth in
             return randomSolution(ofWidth: combinationWidth)
         }
@@ -32,14 +32,36 @@ class CipherMindViewModel : ObservableObject {
         model.addGuess(valueArray)
     }
     
+    func newGame() {
+        model = CipherMindViewModel.createCipherModel(combinationWidth: combinationWidth)
+    }
+    
+    var mostRecentGuess: CipherMindModel<String>.CipherMindCombination? {
+        model.mostRecentGuess()
+    }
+    
+    var canCarryForward: Bool {
+        guard let lastGuess = mostRecentGuess else {
+            return false
+        }
+        for i in 0..<lastGuess.scores.count {
+            if lastGuess.scores[i] == CipherScoreType.CipherScoreTypeCorrectStyleAndLocation {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func addRandomGuess() {
-        model.addGuess(CipherMindViewModel.randomSolution(ofWidth: 5))
+        model.addGuess(CipherMindViewModel.randomSolution(ofWidth: combinationWidth))
     }
     
     var guessesArray: [CipherMindModel<String>.CipherMindCombination] { model.guessesArray }
     var correctSolution: Array<String> { model.correctSolution.guesses }
     var combinationWidth: Int { model.combinationWidth }
+    var isSolved: Bool { model.isSolved }
     
-    static var combinationWidth =  5
+    static let combinationWidth =  6
     static let maxAttempts      = 12
 }

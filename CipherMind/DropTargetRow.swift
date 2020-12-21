@@ -15,9 +15,11 @@ struct DropTargetRow : View, DropCellDelegate {
     @Binding var currentGuess: [String]
     var body: some View {
         HStack {
-            ForEach(0..<currentGuess.count) { index in
+            Spacer()
+            ForEach(0..<currentGuess.count, id: \.self) { index in
                 DropTargetCell(currentString: currentGuess[index], delegate: self, id: index)
             }
+            Spacer()
         }.padding(.horizontal)
     }
     
@@ -29,14 +31,15 @@ struct DropTargetRow : View, DropCellDelegate {
     }
     
     struct DropTargetCell: View {
-        var currentString: String
+        var currentString: String?
         var delegate: DropCellDelegate
         var id: Int
         var body: some View {
             ZStack {
                 Rectangle()
                     .foregroundColor(Color.gray)
-                Text(currentString)
+                Text(currentString ?? "")
+                    .font(.system(size: 28.0))
             }.onDrop(of: ["public.utf8-plain-text"], isTargeted: nil) { providers, location in
                 // SwiftUI bug (as of 13.4)? the location is supposed to be in our coordinate system
                 // however, the y coordinate appears to be in the global coordinate system

@@ -13,7 +13,7 @@ struct PegPallette : View {
         HStack {
             ForEach(pegs.map { String($0) }, id: \.self) { peg in
                 Text(peg)
-//                    .font(Font.system(size: self.defaultEmojiSize))
+                    .font(.system(size: 28.0))
                     .onDrag { NSItemProvider(object: peg as NSString) }
             }
         }

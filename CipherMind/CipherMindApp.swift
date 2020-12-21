@@ -11,7 +11,7 @@ import SwiftUI
 struct CipherMindApp: App {
     var body: some Scene {
         WindowGroup {
-            CipherMindView(currentGuess: ["", "", "", "", ""])
+            CipherMindView()
         }
     }
 }

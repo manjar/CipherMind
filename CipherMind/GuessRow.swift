@@ -22,11 +22,12 @@ struct GuessRow : View {
         var string: String
         var score: CipherScoreType?
         var body: some View {
-            VStack {
+            ZStack {
                 Text(string)
+                    .font(.system(size: 28.0))
                     .onDrag { NSItemProvider(object: string as NSString) }
                 if (score != nil) {
-                    Circle().foregroundColor(colorForScore(score!))
+                    Circle().stroke(lineWidth: 3.0).foregroundColor(colorForScore(score!))
                 }
             }
         }

@@ -19,6 +19,12 @@ struct CipherMindModel<CipherStyle> where CipherStyle: Equatable {
     var guessesArray: [CipherMindCombination] = Array<CipherMindCombination>()
     var combinationWidth: Int
     var maximumAttempts: Int
+    var isSolved: Bool {
+        if let lastGuess = guessesArray.last {
+            return lastGuess.hasSameGuesses(as: correctSolution)
+        }
+        return false
+    }
     
     init(combinationWidth: Int, maximumAttempts:Int, solutionProvider: (Int) -> [CipherStyle]) {
         self.combinationWidth = combinationWidth
@@ -33,6 +39,11 @@ struct CipherMindModel<CipherStyle> where CipherStyle: Equatable {
             return
         }
         guessesArray.append(CipherMindCombination(values))
+        scoreLatestGuess()
+    }
+    
+    func mostRecentGuess() -> CipherMindCombination? {
+        return guessesArray.last
     }
     
     mutating func scoreLatestGuess() {
@@ -74,6 +85,10 @@ struct CipherMindModel<CipherStyle> where CipherStyle: Equatable {
                     scores.append(CipherScoreType.CipherScoreTypeNoMatch)
                 }
             }
+        }
+        
+        func hasSameGuesses(as combination: CipherMindCombination) -> Bool {
+            return guesses == combination.guesses
         }
         
         func containsStyle(_ style:CipherStyle) -> Bool {
