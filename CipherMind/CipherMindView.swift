@@ -94,12 +94,11 @@ struct CipherMindView: View {
     }
     
     func processCarryForward() {
-        guard let lastGuess = cipherViewModel.mostRecentGuess else {
-            return
-        }
-        for i in 0..<lastGuess.scores.count {
-            if lastGuess.scores[i] == CipherScoreType.CipherScoreTypeCorrectStyleAndLocation {
-                currentGuess[i] = lastGuess.guesses[i]
+        for guess in cipherViewModel.guessesArray {
+            for i in 0..<guess.scores.count {
+                if guess.scores[i] == CipherScoreType.CipherScoreTypeCorrectStyleAndLocation {
+                    currentGuess[i] = guess.guesses[i]
+                }
             }
         }
     }
