@@ -14,12 +14,12 @@ struct CipherMindView: View {
     
     var body: some View {
         VStack {
-            Text("Emoji Mind").padding(.vertical)
+            Text("Emoji Mind").padding(.vertical, 5.0)
             ZStack {
-                GuessRow(pegs: cipherViewModel.correctSolution)
                 RoundedRectangle(cornerRadius: 3.0)
                     .stroke()
-                    .foregroundColor(.clear)
+                    .foregroundColor(.black)
+                GuessRow(pegs: cipherViewModel.correctSolution)
                 if (!cipherViewModel.isSolved) {
                     ZStack {
                         RoundedRectangle(cornerRadius: 3.0).foregroundColor(.black)
@@ -32,7 +32,8 @@ struct CipherMindView: View {
                         }
                     }
                 }
-            }.frame(width: nil, height: 50)
+            }
+            .frame(width: nil, height: 50)
             
             // Guess history
             ScrollView {
@@ -66,8 +67,9 @@ struct CipherMindView: View {
                 }
             }, label: {
                 Text("Submit guess")
+                    .font(.system(size: 32))
                     .fontWeight(.bold)
-                    .padding(.vertical)
+                    .padding(.top, 5.0)
             })
             .disabled(!canSubmit || cipherViewModel.isSolved)
 
@@ -79,7 +81,6 @@ struct CipherMindView: View {
             }, label: {
                 Text("Carry known items forward")
             })
-            .padding(5.0)
             .background(RoundedRectangle(cornerRadius: 5.0)
                             .stroke(carryingForward ? Color.blue : Color.clear))
             .disabled(cipherViewModel.isSolved)
@@ -93,7 +94,6 @@ struct CipherMindView: View {
             }, label: {
                 Text("New Game")
             })
-            .padding(5)
             Button(action: {
                 withAnimation(.easeInOut) {
                     cipherViewModel.addRandomGuess()
@@ -105,7 +105,7 @@ struct CipherMindView: View {
                 Text("Random guess")
             })
             .disabled(cipherViewModel.isSolved)
-            .padding(5)
+            .padding(.bottom, 5)
         }.padding()
         .onAppear {
             resetGuess()
