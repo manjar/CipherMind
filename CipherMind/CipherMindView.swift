@@ -14,7 +14,7 @@ struct CipherMindView: View {
     
     var body: some View {
         VStack {
-            Text("Emoji Mind").padding(.vertical, 5.0)
+            Text("Cipher Mind").padding(.vertical, 5.0)
             ZStack {
                 RoundedRectangle(cornerRadius: 3.0)
                     .stroke()
