@@ -37,6 +37,7 @@ struct DropTargetRow : View, DropCellDelegate {
         var body: some View {
             ZStack {
                 Rectangle()
+                    .stroke(lineWidth: 3.0)
                     .foregroundColor(Color.gray)
                 Text(currentString ?? "")
                     .font(.system(size: 28.0))

@@ -17,21 +17,61 @@ struct CipherMindView: View {
             Text("Emoji Mind").padding(.vertical)
             ZStack {
                 GuessRow(pegs: cipherViewModel.correctSolution)
-                Rectangle().stroke()
+                RoundedRectangle(cornerRadius: 3.0)
+                    .stroke()
+                    .foregroundColor(.clear)
                 if (!cipherViewModel.isSolved) {
-                    Rectangle().foregroundColor(.black)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 3.0).foregroundColor(.black)
+                        HStack(spacing: 26) {
+                            ForEach(0..<cipherViewModel.correctSolution.count) { element in
+                                Text("?")
+                                    .font(.system(size: 42))
+                                    .foregroundColor(.white)
+                            }
+                        }
+                    }
                 }
             }.frame(width: nil, height: 50)
+            
+            // Guess history
             ScrollView {
-                ForEach(cipherViewModel.guessesArray) { guess in
-                    GuessRow(pegs: guess.guesses, scores: guess.scores)
-                        .frame(width: nil, height: 25)
+                ScrollViewReader { value in
+                    ForEach(0..<cipherViewModel.guessesArray.count, id:\.self) { index in
+                        GuessRow(pegs: cipherViewModel.guessesArray[index].guesses, scores: cipherViewModel.guessesArray[index].scores)
+                            .frame(width: nil, height: 25)
+                            .padding(.vertical)
+                    }
                         .padding(.vertical)
-                }.padding(.vertical)
+                    .onChange(of: cipherViewModel.guessesArray.count) { _ in
+                        withAnimation {
+                            value.scrollTo(cipherViewModel.guessesArray.count - 1)
+                        }
+                    }
+                }
             }
+            
+            // Target row
             DropTargetRow(currentGuess: $currentGuess)
                 .frame(width: nil, height: 50)
-            PegPallette(pegs: CipherMindViewModel.emojiSet)
+            
+            // Pallette
+            PegPallette(pegs: CipherMindViewModel.emojiSet, currentGuess: $currentGuess)
+                .padding(.top)
+            
+            // Submit guess
+            Button(action: {
+                withAnimation(.easeInOut) {
+                    submitGuess()
+                }
+            }, label: {
+                Text("Submit guess")
+                    .fontWeight(.bold)
+                    .padding(.vertical)
+            })
+            .disabled(!canSubmit || cipherViewModel.isSolved)
+
+            // Carry forward automatically
             Button(action: {
                 withAnimation(.easeInOut) {
                     carryForwardKnownItems()
@@ -43,16 +83,8 @@ struct CipherMindView: View {
             .background(RoundedRectangle(cornerRadius: 5.0)
                             .stroke(carryingForward ? Color.blue : Color.clear))
             .disabled(cipherViewModel.isSolved)
-            .padding(5)
-            Button(action: {
-                withAnimation(.easeInOut) {
-                    submitGuess()
-                }
-            }, label: {
-                Text("Submit guess")
-            })
-            .disabled(!canSubmit || cipherViewModel.isSolved)
-            .padding(5)
+            
+            // New Game
             Button(action: {
                 withAnimation(.easeInOut) {
                     cipherViewModel.newGame()

@@ -23,14 +23,22 @@ struct GuessRow : View {
         var score: CipherScoreType?
         var body: some View {
             ZStack {
-                Text(string)
-                    .font(.system(size: 28.0))
-                    .onDrag { NSItemProvider(object: string as NSString) }
                 if (score != nil) {
-                    Circle()
-                        .stroke(lineWidth: 3.0)
-                        .padding(-5.0)
-                        .foregroundColor(colorForScore(score!))
+                    ZStack {
+                        Circle()
+                            .fill(LinearGradient(gradient: Gradient(colors: [Color(UIColor.white), Color(UIColor.lightGray)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .padding(-6)
+                        Circle()
+                            .stroke(lineWidth: 3.0)
+                            .padding(-3.0)
+                            .foregroundColor(colorForScore(score!))
+                        //                        .background(Circle()
+                        //                                        .inset(by: -3)
+                        //                                        .background()
+                        Text(string)
+                            .font(.system(size: 28.0))
+                            .onDrag { NSItemProvider(object: string as NSString) }
+                    }
                 }
             }
         }
