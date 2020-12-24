@@ -18,6 +18,9 @@ struct DropTargetRow : View, DropCellDelegate {
             Spacer()
             ForEach(0..<currentGuess.count, id: \.self) { index in
                 DropTargetCell(currentString: currentGuess[index], delegate: self, id: index)
+                    .onTapGesture {
+                        currentGuess[index] = ""
+                    }
             }
             Spacer()
         }.padding(.horizontal)
