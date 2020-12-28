@@ -40,11 +40,11 @@ struct DropTargetRow : View, DropCellDelegate {
         var body: some View {
             ZStack {
                 Rectangle()
-                    .stroke(lineWidth: 3.0)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color(UIColor.lightGray))
                 Text(currentString ?? "")
                     .font(.system(size: 28.0))
-            }.onDrop(of: ["public.utf8-plain-text"], isTargeted: nil) { providers, location in
+            }
+            .onDrop(of: ["public.utf8-plain-text"], isTargeted: nil) { providers, location in
                 return delegate.drop(providers: providers, atIndex: id)
                 }
         }
