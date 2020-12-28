@@ -45,8 +45,6 @@ struct DropTargetRow : View, DropCellDelegate {
                 Text(currentString ?? "")
                     .font(.system(size: 28.0))
             }.onDrop(of: ["public.utf8-plain-text"], isTargeted: nil) { providers, location in
-                // SwiftUI bug (as of 13.4)? the location is supposed to be in our coordinate system
-                // however, the y coordinate appears to be in the global coordinate system
                 return delegate.drop(providers: providers, atIndex: id)
                 }
         }
